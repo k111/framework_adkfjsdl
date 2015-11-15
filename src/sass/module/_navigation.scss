@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/* navigation
+---------------------------------------------------- */
+// Breadcrumbs
+.mod-breadcrumbs {
+    width: 980px;
+    margin: 0 auto;
+    padding: 15px 0;
+    font-size: 1.4rem;
+    ul {
+        @include clearfix();
+    }
+    li {
+        float: left;
+        position: relative;
+        padding-left: 25px;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            content: ">";
+          color: #666;
+        }
+
+        &:first-child {
+        padding-left: 0;
+        background: none;
+            &:before {
+                display: none;
+            }
+        }
+        &:last-child {
+        }
+
+    }
+    a {
+        color: $sub-color;
+        &:hover {
+            color: $main-color;
+        }
+    }
+    @include mq-sp() {
+        display: none;
+    }
+}
+
+// mod-pagination
+.mod-pagination {
+    position: relative;
+    margin: 30px 0;
+    //text-align: center;
+    li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    a {
+        display: inline-block;
+        padding: 5px 8px;
+        border: 1px solid $main-color;
+        color: $main-color;
+        text-align: center;
+        border-radius: 3px;
+        text-decoration: none;
+        &:hover,
+        &.is-active {
+            background-color: $main-color;
+            color: #fff;
+        }
+    }
+    .prev,
+    .next {
+    // position: absolute;
+    // top: 0;
+    // display: block;
+    // border-radius: 3px;
+    // background: $main-color;
+    // background-repeat: no-repeat;
+    // background-position: 50% 50%;
+    }
+    .prev {
+        &:hover {
+            background-color: $main-color;
+            color: #fff;
+        }
+    }
+    .next {
+        &:hover {
+            background-color: $main-color;
+            color: #fff;
+        }
+    }
+}
+
+
+// local-nav
+.mod-local-nav {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    li {
+        border-bottom: 1px solid #ccc;
+        &:last-child {
+            border: none;
+        }
+    }
+    a {
+        display: block;
+        padding: 20px;
+    }
+    .is-active a {
+        background: $main-color;
+        color: #fff;
+        text-decoration: none;
+    }
+}

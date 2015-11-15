@@ -1,0 +1,95 @@
+@charset "utf-8";
+//===================================================
+// * _mixins.scss
+//===================================================
+
+// ----
+// * clear
+// * ex) @include clearfix();
+@mixin clearfix() {
+    &:after {
+        display: block;
+        clear: both;
+        content: '';
+        overflow: hidden;
+    }
+}
+
+// ----
+// * opacity hover
+// * ex) @include transition-opacity();
+@mixin transition-opacity($opacity: 0.7) {
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+        opacity: $opacity;
+        text-decoration: none;
+    }
+}
+
+// ----
+// * link hover
+// * ex) @include link-hover();
+@mixin link-hover {
+    &:hover {
+        color: $linkcolor-a;
+    }
+}
+
+
+// ----
+// * メディアクエリ 分岐mixin
+// * ex)
+//   @include mq-sp() {
+//     width: 100%;
+//     font-size: 100%;
+//   }
+@mixin mq-sp() {
+    @media only screen and (max-width: $width-sp) {
+        @content;
+    }
+}
+
+@mixin mq-pc() {
+    @media only screen and (min-width: $width-pc ) {
+        @content;
+    }
+}
+
+
+// ----
+// * 1行文字制限
+// * ex) @include ellipsis();
+@mixin ellipsis() {
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+}
+
+
+// ----
+// * 画像置換
+// * @width: 画像横幅
+// * @height: 画像高さ
+// * ex) @img-replace(20,14)
+@mixin img-replace($width,$height) {
+    overflow: hidden;
+    width: $width;
+    height: $height;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+// ----
+// * Helperクラス
+// * ex) @img-replace(20,14)
+@mixin helper-margin() {
+    //margin
+    @for $i from 0 through 6 {
+        .mb#{$i * 5} {
+            margin-bottom: #{$i * 5}px !important;
+        }
+        .mt#{$i * 5} {
+            margin-top: #{$i * 5}px !important;
+        }
+    }
+}

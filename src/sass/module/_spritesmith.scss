@@ -1,0 +1,114 @@
+//
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//  width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+//
+$ico-arrow-down-name: 'ico-arrow-down';
+$ico-arrow-down-x: 0px;
+$ico-arrow-down-y: 0px;
+$ico-arrow-down-offset-x: 0px;
+$ico-arrow-down-offset-y: 0px;
+$ico-arrow-down-width: 13px;
+$ico-arrow-down-height: 14px;
+$ico-arrow-down-total-width: 80px;
+$ico-arrow-down-total-height: 86px;
+$ico-arrow-down-image: '../img/sprite/sprite.png';
+$ico-arrow-down: (0px, 0px, 0px, 0px, 13px, 14px, 80px, 86px, '../img/sprite/sprite.png', 'ico-arrow-down', );
+$ico-arrow-left-name: 'ico-arrow-left';
+$ico-arrow-left-x: 23px;
+$ico-arrow-left-y: 24px;
+$ico-arrow-left-offset-x: -23px;
+$ico-arrow-left-offset-y: -24px;
+$ico-arrow-left-width: 12px;
+$ico-arrow-left-height: 14px;
+$ico-arrow-left-total-width: 80px;
+$ico-arrow-left-total-height: 86px;
+$ico-arrow-left-image: '../img/sprite/sprite.png';
+$ico-arrow-left: (23px, 24px, -23px, -24px, 12px, 14px, 80px, 86px, '../img/sprite/sprite.png', 'ico-arrow-left', );
+$ico-arrow-right-name: 'ico-arrow-right';
+$ico-arrow-right-x: 45px;
+$ico-arrow-right-y: 48px;
+$ico-arrow-right-offset-x: -45px;
+$ico-arrow-right-offset-y: -48px;
+$ico-arrow-right-width: 12px;
+$ico-arrow-right-height: 14px;
+$ico-arrow-right-total-width: 80px;
+$ico-arrow-right-total-height: 86px;
+$ico-arrow-right-image: '../img/sprite/sprite.png';
+$ico-arrow-right: (45px, 48px, -45px, -48px, 12px, 14px, 80px, 86px, '../img/sprite/sprite.png', 'ico-arrow-right', );
+$ico-arrow-up-name: 'ico-arrow-up';
+$ico-arrow-up-x: 67px;
+$ico-arrow-up-y: 72px;
+$ico-arrow-up-offset-x: -67px;
+$ico-arrow-up-offset-y: -72px;
+$ico-arrow-up-width: 13px;
+$ico-arrow-up-height: 14px;
+$ico-arrow-up-total-width: 80px;
+$ico-arrow-up-total-height: 86px;
+$ico-arrow-up-image: '../img/sprite/sprite.png';
+$ico-arrow-up: (67px, 72px, -67px, -72px, 13px, 14px, 80px, 86px, '../img/sprite/sprite.png', 'ico-arrow-up', );
+$sprite-img-width: 80px;
+$sprite-img-height: 86px;
+$sprite-img-image: '../img/sprite/sprite.png';
+$sprite-img-sprites: ($ico-arrow-down, $ico-arrow-left, $ico-arrow-right, $ico-arrow-up, );
+$sprite-img: (80px, 86px, '../img/sprite/sprite.png', $sprite-img-sprites, );
+
+//
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//  @include sprite($icon-email);
+// }
+//
+@mixin sprite-width($sprite) {
+    width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+    height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+    $sprite-offset-x: nth($sprite, 3);
+    $sprite-offset-y: nth($sprite, 4);
+    background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+    $sprite-image: nth($sprite, 9);
+    background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+    @include sprite-image($sprite);
+    @include sprite-position($sprite);
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+}
+
+//
+// The `sprites` mixin generates identical output to the CSS template
+//  but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+//
+@mixin sprites($sprites) {
+    @each $sprite in $sprites {
+        $sprite-name: nth($sprite, 10);
+        .#{$sprite-name} {
+            @include sprite($sprite);
+        }
+    }
+}

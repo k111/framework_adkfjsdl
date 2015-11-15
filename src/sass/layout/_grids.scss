@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/* Grids
+---------------------------------------------------- */
+
+@mixin grid($grid-row-name, $grid-col-name, $cols: 2, $total-width: 980, $gutter: 10, $sp-cols: 2, $sp-gutter: 5) {
+    /* --- grid #{$cols}columns --- */
+    .#{$grid-row-name} {
+        $gutter-total: ($cols - 1) * $gutter;
+        $all-width: $total-width + $gutter;
+        margin-right: - percentage($gutter / $all-width);
+        margin-bottom: 10px;
+
+        @include mq-sp() {
+            @if( $sp-cols == 1 ) {
+                margin-right: 0;
+            }
+        }
+
+        @include clearfix();
+        > .#{$grid-col-name} {
+            float: left;
+            $width: ($total-width - $gutter-total) / $cols;
+            width: percentage($width / $all-width);
+            margin-right: percentage($gutter / $all-width);
+            $sp-total-width: 640;
+            @include mq-sp() {
+                $sp-gutter-total: ($sp-cols - 1) * $sp-gutter;
+                $sp-all-width: $sp-total-width + $sp-gutter;
+                $width: ($sp-total-width - $sp-gutter-total) / $sp-cols;
+                @if( $sp-cols != 1 ) {
+                    width: percentage($width / $sp-all-width);
+                    margin-right: percentage($sp-gutter / $sp-all-width);
+                }@else {
+                    float: none;
+                    width: auto;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@include grid('l-grid2', 'grid', 2, 980, 10 , 2, 10);
+@include grid('l-grid3', 'grid', 3, 980, 10 , 1, 10);
+@include grid('l-grid4', 'grid', 4, 980, 10 , 2, 10);
+@include grid('l-grid5', 'grid', 5, 980, 10 , 1, 10);
+@include grid('l-grid6', 'grid', 6, 980, 10 , 3, 10);
+

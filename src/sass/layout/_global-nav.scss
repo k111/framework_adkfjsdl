@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/*  Global Navigation
+---------------------------------------------------- */
+.l-global-nav {
+    display: block;
+    margin-bottom: 30px;
+    background: $main-color;
+    &.stuck {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    @include mq-sp() {
+        display: none;
+    }
+
+    nav {
+        width: 980px;
+        margin: 0 auto;
+
+        @include mq-sp() {
+            width: auto;
+        }
+    }
+    ul {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        margin: 0 auto;
+        @include clearfix();
+        font-size: 1.4rem;
+
+        @include mq-sp() {
+            display: block;
+        }
+    }
+
+
+    li {
+        display: table-cell;
+        position: relative;
+        width: 100%;
+        text-align: center;
+
+        @include mq-sp() {
+            display: block;
+        }
+
+
+
+        @include mq-sp() {
+            border: none;
+            margin: 0 0 1px;
+        }
+
+        a {
+            display: block;
+            padding: 14px 0 14px;
+            color: #fff;
+            text-decoration: none;
+            white-space: nowrap;
+            &:hover {
+                background-color: darken($main-color, 10%);
+            }
+        }
+        &.is-active a {
+            background-color: darken($main-color, 10%);
+        }
+
+        span {
+            display: block;
+            padding: 2px 0;
+        }
+
+    }
+
+}
+
+

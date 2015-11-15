@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/*
+  ##### dummy #####
+  common.css
+  [Base]
+  - Reset
+  - Init
+  [Layout]
+  - Header
+  - Footer
+*/
+// Import setting
+@import "core/_variables.scss";
+@import "core/_mixins.scss";
+//@import "compass";
+
+/* ----------------------------------------------------
+[Core]
+---------------------------------------------------- */
+@import "core/_reset.scss";
+@import "core/_init.scss";
+@import "core/_helper.scss";
+
+
+/* ----------------------------------------------------
+[Layout]
+---------------------------------------------------- */
+@import "layout/_header.scss";
+@import "layout/_global-nav.scss";
+@import "layout/_footer.scss";
+@import "layout/_base.scss";
+@import "layout/_grids.scss";
+
+/* ----------------------------------------------------
+[Module]
+---------------------------------------------------- */
+@import "module/_typography.scss";
+@import "module/_button.scss";
+@import "module/_table.scss";
+@import "module/_media.scss";
+@import "module/_box.scss";
+@import "module/_navigation.scss";
+@import "module/_tab.scss";
+@import "module/_accordion.scss";
+@import "module/_form.scss";
+@import "module/_icon.scss";
+
+/* ----------------------------------------------------
+[Plugins]
+---------------------------------------------------- */
+@import "plugins/_slick.scss";
+@import "plugins/_magnific-popup.scss";

@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+/* Media
+---------------------------------------------------- */
+// base
+.mod-media {
+    @include clearfix();
+    margin: 1em 0;
+    img {
+        border-radius: 3px;
+    }
+    .media-image {
+        margin: 0 0 20px;
+        text-align: center;
+    }
+
+    @include mq-sp() {
+        .media-image {
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    // cell
+    &.media-cell {
+        .media-image {
+            text-align: left;
+            @include mq-sp() {
+                text-align: center;
+            }
+            img {
+                @include mq-sp() {
+                    max-width: 300px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        .image-l {
+            float: left;
+            padding-right: 20px;
+
+            @include mq-sp() {
+                float: none;
+                margin: 0 0 20px;
+                padding-right: 0;
+            }
+        }
+
+        .image-r {
+            float: right;
+            padding-left: 20px;
+            @include mq-sp() {
+                float: none;
+                margin: 0 0 20px;
+                padding-left: 0;
+            }
+        }
+
+        .media-text {
+            overflow: hidden;
+            vertical-align: top;
+            p {
+                margin: 0 0 1em;
+                line-height: 2;
+            }
+        }
+    }
+
+    // float
+    &.media-float {
+        .media-image {
+            width:300px;
+            vertical-align: top;
+            line-height: 1;
+
+            @include mq-sp() {
+                width: auto;
+                text-align: center;
+            }
+        }
+        .image-l {
+            float: left;
+            margin: 0 20px 20px 0;
+
+            @include mq-sp() {
+                float: none;
+                margin: 0 0 20px;
+            }
+        }
+
+        .image-r {
+            float: right;
+            margin: 0 0 20px 20px;
+
+            @include mq-sp() {
+                float: none;
+                margin: 0 0 20px;
+            }
+        }
+
+        .media-text {
+            vertical-align: top;
+            p {
+                margin: 0 0 1em;
+                line-height: 1.8;
+            }
+        }
+    }
+}

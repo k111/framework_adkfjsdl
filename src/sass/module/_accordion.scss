@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* Accordion
+---------------------------------------------------- */
+.mod-accordion {
+    margin: 2em 0;
+    dt {
+        border: 1px solid #ccc;
+        a {
+            display: block;
+            position: relative;
+            padding: 10px;
+            overflow: hidden;
+        }
+    }
+    dd {
+        display: none;
+        padding: 10px;
+    }
+    dd.is-show {
+      display: block;
+    }
+}
+
+
+
+

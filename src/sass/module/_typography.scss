@@ -1,0 +1,193 @@
+@import "core/_variables.scss";
+@import "core/_mixins.scss";
+
+/* Heading
+---------------------------------------------------- */
+.mod-heading1 {
+    padding: 0 0 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 3.2rem;
+
+    @include mq-sp() {
+    }
+}
+
+.mod-heading2 {
+    font-size: 2.8rem;
+
+    @include mq-sp() {
+    }
+}
+
+.mod-heading3 {
+    font-size: 2.4rem;
+
+    @include mq-sp() {
+    }
+}
+
+.mod-heading4 {
+    font-size: 2.2rem;
+
+    @include mq-sp() {
+    }
+}
+
+.mod-heading5 {
+    font-size: 1.8rem;
+
+    @include mq-sp() {
+    }
+}
+
+
+/* Paragrah
+---------------------------------------------------- */
+.mod-p {
+    margin: 0 0 40px;
+    line-height: 1.6;
+    @include mq-sp() {
+        margin-bottom: 30px;
+    }
+}
+
+.mod-lead {
+    font-size: 1.8rem;
+}
+
+
+// page top
+.mod-pagetop {
+    text-align: right;
+    font-size: 2.8rem;
+    a {
+        display: inline-block;
+        padding: 5px 10px;
+        color: #fff;
+        background: #666;
+        text-decoration: none;
+    }
+}
+
+/* Inline text
+---------------------------------------------------- */
+strong {
+    color: #f57f00;
+    font-weight: bold;
+}
+
+del {
+
+}
+
+ins {
+
+}
+
+u {
+  text-decoration: underline;
+}
+
+
+/* Alignment classes
+---------------------------------------------------- */
+.mod-l {
+    text-align: left !important;
+}
+
+.mod-c {
+    text-align: center !important;
+}
+
+.mod-r {
+    text-align: right !important;
+}
+
+
+/* Lists
+---------------------------------------------------- */
+
+// Unordered List
+.mod-ul {
+    margin: 0 0 32px;
+    display: table;
+    @include mq-sp() {
+        margin: 0 0 16px;
+    }
+
+    > li {
+        position: relative;
+        margin: 0 0 10px;
+        padding-left: 1.2em;
+        line-height: 1.5;
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 3px;
+            content: "•";
+            padding-right: 0.4em;
+            color: $text-color;
+            font-weight: bold;
+        }
+    }
+}
+
+// Ordered List
+.mod-ol {
+    margin: 0 0 32px 1.5em;
+    list-style-type: decimal;
+    @include mq-sp() {
+        margin-bottom: 16px;
+    }
+
+    > li {
+        margin: 0 0 10px;
+        line-height: 1.5;
+    }
+}
+
+// Inline List
+.mod-list-inline {
+    margin: 0 0 32px;
+    list-style-type: decimal;
+    @include mq-sp() {
+        margin-bottom: 16px;
+    }
+
+    > li {
+        display: inline-block;
+        margin: 0 20px 0 0;
+        line-height: 1.5;
+    }
+}
+
+
+// Description List
+.mod-dl {
+    dt {
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+    dd {
+        margin: 0 0 10px 10px;
+  }
+}
+
+// Infomation List
+.mod-info {
+    @include clearfix();
+    dt {
+        float: left;
+        width: 6em;
+        margin: 0 0 10px;
+    }
+    dd {
+        margin: 0 0 10px 7em;
+    }
+}
+
+/* section
+---------------------------------------------------- */
+.mod-section {
+  margin: 0 0 40px;
+}

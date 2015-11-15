@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+/* Global Header
+---------------------------------------------------- */
+.l-header {
+    position: relative;
+    width: 100%;
+    padding: 20px 0 0;
+    line-height: 1.1;
+
+    @include mq-sp() {
+        width: auto;
+        padding: 0;
+    }
+
+    .logo {
+        display: block;
+        width: 200px;
+        font-size: 2rem;
+        font-weight: bold;
+
+        a {
+            display: block;
+        }
+
+        @include mq-sp() {
+            padding: 7px;
+            img {
+                width: 60px;
+                height: auto;
+            }
+        }
+    }
+
+    .inner {
+        position: relative;
+        width: 980px;
+        min-height: 60px;
+        margin: 0 auto;
+
+        @include mq-sp() {
+            width: auto;
+            height: auto;
+        }
+    }
+
+
+    .header-nav {
+        @include clearfix();
+        position: absolute;
+        top: 5px;
+        right: 230px;
+        line-height: 1.5;
+
+        @include mq-sp() {
+            display: none;
+        }
+
+        li {
+            float: left;
+            margin-left: 25px;
+            padding: 2px 0 2px 20px;
+            background-repeat: no-repeat;
+            background-position: 0 50%;
+            font-size: 1.4rem;
+        }
+
+        a {
+            padding: 0 15px 0 0;
+        }
+    }
+
+    .header-search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 200px;
+        font-size: 1.4rem;
+        line-height: 1;
+        text-align: right;
+
+        @include mq-sp() {
+            display: none;
+            top: 0;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .input-search {
+            display: block;
+            position: relative;
+            width: 200px;
+            margin-left: auto;
+            box-sizing: border-box;
+            padding: 3px 30px 3px 5px;
+            background: #fff;
+            border: 1px solid #c6e0d5;
+            border-radius: 3px;
+            color: $sub-color;
+            line-height: 2;
+            outline: 0;
+            @include mq-sp() {
+                position: static;
+                width: 92%;
+            }
+            &::-webkit-input-placeholder,
+            &::-moz-placeholder,
+            &:-ms-input-placeholder {
+                color: #b4c2ba;
+            }
+            &:focus {
+                color: $sub-color;
+                border-color: $main-color;
+            }
+        }
+        .btn-search {
+            position: absolute;
+            top: 6px;
+            right: 7px;
+            padding: 5px;
+            color: #fff;
+            background: $main-color;
+            border: 0;
+            border-radius: 5px;
+            &:hover {
+                background-color: darken($main-color, 20%);
+            }
+            @include mq-sp() {
+                top: 12px;
+                right: 15px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .sp-menu {
+        display: none;
+        @include mq-sp() {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            display: inline-block;
+
+            a {
+                display: block;
+                width: 24px;
+                height: 21px;
+                padding: 5px;
+                margin: 0 0 0 auto;
+                position: relative;
+                top: 6px;
+            }
+            span {
+                display: block;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: $main-color;
+                transition: all 0.2s ease;
+                &:nth-of-type(1) {
+                  top: 0;
+                }
+                &:nth-of-type(2) {
+                  top: 9px;
+                }
+                &:nth-of-type(3) {
+                  bottom: 0;
+                }
+            }
+            &.is-active {
+                span:nth-of-type(1) {
+                    transform: translateY(8px) rotate(-45deg);
+                }
+                span:nth-of-type(2) {
+                    opacity: 0;
+                }
+                span:nth-of-type(3) {
+                    transform: translateY(-10px) rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+

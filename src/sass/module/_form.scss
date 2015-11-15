@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/* Form Element
+---------------------------------------------------- */
+.mod-input-text,
+.mod-textarea {
+    appearance: none;
+    padding: 8px 15px;
+    border: 1px solid #AFBFC7;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    box-shadow: none;
+
+    @include mq-sp() {
+        padding: 8px;
+    }
+}
+
+.mod-select {
+    padding: 6px 15px;
+    border: 1px solid #AFBFC7;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    box-shadow: none;
+
+    @include mq-sp() {
+        padding: 6px 8px;
+    }
+}
+
+.mod-textarea {
+    max-width: 100%;
+    height: 14em;
+    line-height: 1.6;
+
+    @include mq-sp() {
+        height: 11em;
+    }
+}
+
+.mod-radio-label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    input[type="radio"] {
+        display: inline-block;
+        overflow: hidden;
+        width: 0;
+        height: 16px;
+        opacity: 0;
+    }
+    input[type="radio"] + span {
+        padding-left: 25px;
+        background: url(/img/common/ico_no-checked.png) no-repeat 0 50%;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    input[type="radio"]:checked + span {
+        background: url(/img/common/ico_checked.png) no-repeat 0 50%;
+    }
+}
+
+.mod-input-text,
+.mod-select,
+.mod-textarea {
+    &.is-error {
+        border: 1px solid #D40000;
+        transition: border 0.2s ease;
+    }
+    &:focus {
+        border: 1px solid $sub-color;
+        outline: none;
+        transition: border 0.2s ease;
+    }
+}
+
+.mod-error {
+    margin-top: 5px;
+    color: #D40000;
+}
+
+/* Element Size */
+.mod-size-ss {
+    width: 10%;
+}
+
+.mod-size-s {
+    width: 20%;
+}
+
+.mod-size-m {
+    width: 50%;
+}
+
+.mod-size-l {
+    width: 100%;
+}
+
+
+/* Form Layout
+---------------------------------------------------- */
+.mod-form {
+    dl {
+        display: table;
+        width: 100%;
+    }
+    dt {
+        display: table-cell;
+        width: 10%;
+    }
+    dd {
+        display: table-cell;
+        width: 90%;
+    }
+    @include mq-sp() {
+        dt, dd {
+            display: table-row;
+            width: 100%;
+        }
+    }
+}
+
+/* Form Actions
+---------------------------------------------------- */
+.mod-form-actions {
+
+}

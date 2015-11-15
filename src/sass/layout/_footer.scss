@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* Global Footer
+---------------------------------------------------- */
+.l-footer {
+    padding: 20px 0;
+    border-top: 5px solid $main-color;
+    background: #fff;
+
+    .inner {
+        margin: 0 auto;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
+

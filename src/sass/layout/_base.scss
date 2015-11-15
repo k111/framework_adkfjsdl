@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/* Layout Base
+---------------------------------------------------- */
+.l-container {
+    @include clearfix();
+        padding: 0 0 50px;
+
+    @include mq-sp() {
+        padding: 0 12px 15px;
+    }
+}
+
+.l-contents {
+    @include clearfix();
+        width: 980px;
+        min-height: 800px;
+        margin: 0 auto;
+
+    @include mq-sp() {
+        width: auto;
+        padding: 10px;
+    }
+}
+
+.l-main {
+    float: left;
+    width: 688px;
+    @include mq-sp() {
+        margin-bottom: 30px;
+        float: none;
+        width: auto;
+    }
+}
+
+.l-sub {
+    float: right;
+    width: 252px;
+    @include mq-sp() {
+        margin-bottom: 30px;
+        float: none;
+        width: auto;
+    }
+}
+

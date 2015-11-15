@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* Table
+---------------------------------------------------- */
+.mod-table {
+    width: 100%;
+    margin: 0 0 32px;
+
+    @include mq-sp() {
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+    }
+
+    caption {
+        text-align: left;
+        padding: 0 0 5px;
+    }
+    tr {
+        border-top: 2px solid #dee2e7;
+        border-bottom: 2px solid #dee2e7;
+    }
+    th {
+        text-align: left;
+        padding: 15px;
+        background: #fafafa;
+        white-space: nowrap;
+        border-right: 1px solid #dee2e7;
+        vertical-align: middle;
+    }
+    td {
+        padding: 15px;
+        line-height: 1.5;
+        vertical-align: middle;
+    }
+    .mod-ul {
+        margin-top: 0;
+        margin-bottom: 0;
+        li {
+            margin-bottom: 0.2em;
+        }
+    }
+}

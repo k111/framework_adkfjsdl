@@ -1,0 +1,42 @@
+@charset "utf-8";
+//   _variables.scss
+
+// -------------------------------------------------
+// # Gloval variables setting
+// -------------------------------------------------
+
+// ## Colors
+$main-color:   #2196F3;
+$sub-color:    #1976D2;
+$accent-color: #8BC34A;
+$text-color:   #383737;
+$text-color-sub:   #383737;
+$border-color: #e3e8e8;
+$link-color:   #2196F3;
+
+
+// button
+$btn-color: $link-color;
+$btn-color_hover: lighten( $btn-color, 15% );
+
+
+// ## Font size
+$font-size-base: 62.5% !default;
+
+
+// ## Font family
+$font-family-base: '游ゴシック', YuGothic, Roboto, 'Droid Sans', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif !default;
+$font-family-en: 'Myriad Pro','Helvetica','Arial',sans-serif !default;
+
+
+
+// ## Line height
+$base-line-height: 1.5 !default;
+$typo-line-height: 1.2 !default;
+
+// ## media query
+$width-pc:          960px;
+$width-sp:          640px;
+
+// ## Other
+$opacity-transparent: 0.7 !default;
